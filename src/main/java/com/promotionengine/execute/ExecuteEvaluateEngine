@@ -1,0 +1,21 @@
+package com.promotionengine.execute;
+
+import com.promotionengine.evaluate.EvaluateCost;
+
+
+
+public class ExecuteEvaluateEngine {
+
+	private EvaluateCost calc;
+
+	private int total;
+
+	private int option;
+
+	public ExecuteEvaluateEngine(EvaluateCost calc) {
+		this.total = 0;
+		this.calc = calc;
+		this.option = 1;
+	}
+
+}
