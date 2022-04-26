@@ -2,14 +2,10 @@ package com.promotionengine.execute;
 
 import com.promotionengine.evaluate.EvaluateCost;
 
-
-
 public class ExecuteEvaluateEngine {
 
 	private EvaluateCost calc;
-
 	private int total;
-
 	private int option;
 
 	public ExecuteEvaluateEngine(EvaluateCost calc) {
@@ -18,4 +14,14 @@ public class ExecuteEvaluateEngine {
 		this.option = 1;
 	}
 
+	public int execute(int skuIdA, int skuIdB, int skuIdC, int skuIdD) {
+		switch (option) {
+		case 1:
+			total = calc.evaluateTotalCost(skuIdA, skuIdB, skuIdC, skuIdD);
+			break;
+		default:
+			break;
+		}
+		return total;
+	}
 }
