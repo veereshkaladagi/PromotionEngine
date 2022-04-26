@@ -4,47 +4,35 @@ public class EvaluateCost {
 	
 
 	public static final int PRICE_SKU_A = 50;
-
-	public static final int PRICE_SKU_B = 30;
-
-	public static final int PRICE_SKU_C = 20;
-
-	public static final int PRICE_SKU_D = 15;
-	
 	public static final int PRICE_COMBO_SKU_A = 130;
-	
+	public static final int PRICE_SKU_B = 30;
 	public static final int PRICE_COMBO_SKU_B = 45;
-	
+	public static final int PRICE_SKU_C = 20;
+	public static final int PRICE_SKU_D = 15;
 	public static final int PRICE_COMBO_SKU_CD = 30;
-	
 	public int total =0;
 	
 	
 	public int evaluateTotalCost(int quantA, int quantB, int quantC, int quantD ) {
 		
+		
 		  total = calculateSkuIdA(quantA, total);
-		
 		  total = calculateSkuIdB(quantB, total);
-		
 		  total = calculateSkuIdCAndD(quantC, quantD, total);
+		
 		
 		return total ;
 	}
-
-
+	
 	private int calculateSkuIdA(int quantA, int total) {
 		if (quantA >= 3) {
 			int quotient = quantA / 3;
 			int remainder = quantA % 3;
-
 			total = (quotient >= 0) ? total + quotient * PRICE_COMBO_SKU_A : total;
-
 			total = (remainder >= 0) ? total + remainder * PRICE_SKU_A : total;
 		} else {
-
 			total = total + quantA * PRICE_SKU_A;
 		}
-		
 		return total;
 	}
 
@@ -57,10 +45,8 @@ public class EvaluateCost {
 
 			total = (remainder >= 0) ? total + remainder * PRICE_SKU_B : total;
 		} else {
-
 			total = total + quantB * PRICE_SKU_B;
 		}
-		
 		return total;
 	}
 	
@@ -80,10 +66,5 @@ public class EvaluateCost {
 			total =total + quantD * PRICE_SKU_D;
 		}
 		return total;
-	}
-	
-	
-
-	
-	
+	}	
 }
