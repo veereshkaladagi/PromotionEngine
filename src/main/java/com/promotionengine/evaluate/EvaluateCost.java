@@ -52,7 +52,7 @@ public class EvaluateCost {
 	
 	private int calculateSkuIdCAndD(int quantC, int quantD, int total) {
 		
-		if(quantC >=1 && quantD >=1 ) {
+		if(quantC >=1 && quantD <=1 ) {
 			
 			total = (quantC == quantD ) ? total + quantC*PRICE_COMBO_SKU_CD : total;
 			
